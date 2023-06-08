@@ -5,7 +5,6 @@ HumanPlayer::HumanPlayer(std::string playerName) : Player(playerName) {};
 int HumanPlayer::chooseGesture() {
     int choice;
     bool validChoice = false;
-
     do {
         ColorCYN
         std::cout << "Ваш вибір (0 - завершити гру , 1 - камінь, 2 - ножиці, 3 - папір ): ";
@@ -24,6 +23,5 @@ int HumanPlayer::chooseGesture() {
             validChoice = true;
         }
     } while (!validChoice);
-
     return choice;
 };

@@ -8,4 +8,3 @@ public:
     HumanPlayer(std::string playerName);
     int chooseGesture();
 };
-

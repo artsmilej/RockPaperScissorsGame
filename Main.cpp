@@ -51,7 +51,6 @@ int main() {
     const int maxRounds = 11;
     int numRounds;
     
-
     do {
         ColorBLU
         std::cout << "+-------------------------------+" << "\n";
@@ -82,7 +81,6 @@ int main() {
             ColorZero
         }
     } while (std::cin.fail() || numRounds < 1 || numRounds > 11);
-
     system("cls");
 
     Game game(&human, &computer, numRounds);
@@ -99,6 +97,5 @@ int main() {
     ColorZero
 
     game.play();
-
     return 0;
 }

@@ -25,6 +25,7 @@ void Game::play() {
             ColorZero
             return;
         }
+
         ColorCYN
         std::cout << player1->getName() << " обрав: " << "\n";
         ColorZero

@@ -10,4 +10,3 @@ public:
     virtual int chooseGesture() = 0;
     std::string getName();
 };
-
