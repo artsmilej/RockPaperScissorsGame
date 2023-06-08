@@ -4,93 +4,93 @@ Game::Game(Player* p1, Player* p2, int numRounds) : player1(p1), player2(p2), ro
 
 void Game::play() {
     for (int round = 1; round <= rounds; round++) {
-        std::cout << "\033[0;34m";
+        ColorBLU
         std::cout << "+-------------------------------+" << "\n";
         std::cout << "|";
-        std::cout << "\033[0;32m";
+        ColorGRN
         std::cout << "           Раунд ";
         std::cout << round<<"             ";
-        std::cout << "\033[0;34m";
+        ColorBLU
         std::cout << "|" << "\n";
-        std::cout << "\033[0;33m";
+        ColorYEL
         std::cout << "+-------------------------------+" << "\n";
-        std::cout << "\033[0m";
+        ColorZero
         int gesture1 = player1->chooseGesture();
         int gesture2 = player2->chooseGesture();
 
         // Перевірка на вихід з гри
         if (gesture1 == 0 || gesture2 == 0) {
-            std::cout << "\033[0;33m";
+            ColorYEL
             std::cout << "Гра була завершена користувачем." << "\n";
-            std::cout << "\033[0m";
+            ColorZero
             return;
         }
-        std::cout << "\033[0;36m";
+        ColorCYN
         std::cout << player1->getName() << " обрав: " << "\n";
-        std::cout << "\033[0m";
+        ColorZero
         std::wcout << getGestureSymbol(gesture1) << "\n";
-        std::cout << "\033[0;36m";
+        ColorCYN
         std::cout << player2->getName() << " обрав: " << "\n";
-        std::cout << "\033[0m";
+        ColorZero
         std::wcout << getGestureSymbol(gesture2) << "\n";
 
         if (gesture1 == gesture2) {
-            std::cout << "\033[0;33m";
+            ColorYEL
             std::cout << "Нічия!" << "\n";
-            std::cout << "\033[0m";
+            ColorZero
         }
         else if ((gesture1 == 1 && gesture2 == 2) ||
             (gesture1 == 2 && gesture2 == 3) ||
             (gesture1 == 3 && gesture2 == 1)) {
-            std::cout << "\033[0;32m";
+            ColorGRN
             std::cout << player1->getName() << " переміг раунд!" << "\n";
-            std::cout << "\033[0m";
+            ColorZero
             scorePlayer1++;
         }
         else {
-            std::cout << "\033[0;31m";
+            ColorRED
             std::cout << player2->getName() << " переміг раунд!" << "\n";
-            std::cout << "\033[0m";
+            ColorZero
             scorePlayer2++;
         }
-        std::cout << "\033[0;36m";
+        ColorCYN
         std::cout << "---------------------------" << "\n";
-        std::cout << "\033[0m";
+        ColorZero
         Sleep(4000);
         system("cls");
     }
 
-    std::cout << "\033[0;34m";
+    ColorBLU
     std::cout << "+-------------------------------+" << "\n";
     std::cout << "|";
-    std::cout << "\033[0;32m";
+    ColorGRN
     std::cout << "      Підсумковий рахунок      ";
-    std::cout << "\033[0;34m";
+    ColorBLU
     std::cout << "|" << "\n";
-    std::cout << "\033[0;33m";
+    ColorYEL
     std::cout << "+-------------------------------+" << "\n";
-    std::cout << "\033[0m";
-    std::cout << "\033[0;36m";
+    ColorZero
+    ColorCYN
     std::cout << player1->getName() << ": " << scorePlayer1 << "\n";
     std::cout << player2->getName() << ": " << scorePlayer2 << "\n";
-    std::cout << "\033[0;35m";
+    ColorMAG
     std::cout << "+-------------------------------+" << "\n";
-    std::cout << "\033[0m";
+    ColorZero
 
     if (scorePlayer1 > scorePlayer2) {
-        std::cout << "\033[0;32m";
+        ColorGRN
         std::cout << player1->getName() << " переміг у грі!" << "\n";
-        std::cout << "\033[0m";
+        ColorZero
     }
     else if (scorePlayer1 < scorePlayer2) {
-        std::cout << "\033[0;31m";
+        ColorRED
         std::cout << player2->getName() << " переміг у грі!" << "\n";
-        std::cout << "\033[0m";
+        ColorZero
     }
     else {
-        std::cout << "\033[0;33m";
+        ColorYEL
         std::cout << "Гра закінчилася внічию!" << "\n";
-        std::cout << "\033[0m";
+        ColorZero
     }
 };
 

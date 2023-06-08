@@ -1,8 +1,6 @@
-﻿  ComputerPlayer.cpp
-  Game.cpp
+﻿  Game.cpp
   HumanPlayer.cpp
   Main.cpp
 E:\Проект\RockPaperScissorsGame\Main.cpp(12,15): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
-  Player.cpp
   Создание кода...
   RockPaperScissorsGame.vcxproj -> E:\Проект\RockPaperScissorsGame\x64\Debug\RockPaperScissorsGame.exe
